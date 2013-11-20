@@ -1,5 +1,5 @@
 require 'open-uri'
-PAGE = 10
+PAGE = 2
 class Restaurant < ActiveRecord::Base
   def Restaurant::grasp
     count = 0
