@@ -6,6 +6,10 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :title
       t.string :phone_num
       t.string :address
+      t.string :street
+      t.string :locality
+      t.string :region
+      t.string :postal_code
 
       t.timestamps
     end
