@@ -6,7 +6,8 @@ class Restaurant < ActiveRecord::Base
     PAGE.times.each do |page|
       doc = Nokogiri::HTML(open('http://www.yellowpages.com/new-york-ny/restaurants?g=New+York%2C+NY&page=' + (page + 1).to_s))
       doc.css('.listing-content').each do |content|
-        unique_code = content.css('.business-name').data('lid')
+        binding.pry
+        unique_code = content.css('.business-name').attr('data-lid').value
         unless Restaurant.exists?(unique_code: unique_code)
           rt = Restaurant.new
           business_name = content.css('.business-name a')
